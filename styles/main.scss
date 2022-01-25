@@ -1,0 +1,292 @@
+$very-dark-grayish-blue: hsl(2017, 19%, 35%);
+$desaturated-dark-blue: hsl(214, 17%, 51%);
+$grayish-blue: hsl(212, 23%, 69%);
+$light-grayish-blue: hsl(210, 46%, 95);
+
+$font-family: 'Manrope',
+sans-serif;
+$font-size-title: 1.26em;
+$font-size-body: 13px;
+
+$border-radius: .5rem;
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-family;
+    color: $very-dark-grayish-blue;
+}
+
+.main {
+    display: flex;
+    min-height: 100vh;
+    background-color: $light-grayish-blue;
+}
+
+.card {
+    margin: auto;
+    display: inline-flex;
+    width: auto;
+    height: 100%;
+    background-color: white;
+    border-radius: $border-radius;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+    .card-imagen {
+        object-fit: cover;
+        object-position: 0;
+        width: 17.7em;
+        height: auto;
+        border-radius: $border-radius 0 0 $border-radius;
+    }
+
+    .card-copy {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 2em 2.2em;
+
+        .card-title {
+            color: $very-dark-grayish-blue;
+            font-size: $font-size-title;
+            font-weight: bold;
+            line-height: 1.4em;
+            max-width: 18em;
+            padding-bottom: .5em;
+        }
+
+        .card-desc {
+            color: $desaturated-dark-blue;
+            font-size: $font-size-body;
+            font-weight: 500;
+            line-height: 1.5em;
+            max-width: 28em;
+            padding-bottom: 1.5em;
+        }
+
+        .avatar {
+            display: flex;
+            max-width: 30em;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+
+            .avatar-imagen {
+                width: 2.5em;
+                height: auto;
+                border-radius: 50%;
+            }
+
+            .avatar-content {
+                padding-left: 1em;
+                width: 100%;
+                height: auto;
+
+                .name {
+                    font-size: $font-size-body;
+                    font-weight: bold;
+                }
+
+                .timestamp {
+                    font-size: $font-size-body;
+                    color: $desaturated-dark-blue;
+                }
+            }
+
+            .button-share {
+                background-color: $light-grayish-blue;
+                transition-property: background-color;
+                transition-duration: 600ms;
+                padding: .5em;
+                border: none;
+                border-radius: 50%;
+                cursor: pointer;
+
+                .icon {
+                    width: 1em;
+                    height: 1em;
+                    padding: .6em;
+                    background-color: $very-dark-grayish-blue;
+                    mask: url(../images/icon-share.svg) no-repeat;
+                }
+
+                &:hover {
+                    .icon {
+                        background-color: $light-grayish-blue;
+                    }
+                    background-color: $very-dark-grayish-blue;
+                }
+            }
+
+            .share-options {
+                position: absolute;
+                left: 14.55em;
+                bottom: 4em;
+                height: auto;
+                animation-name: animationOptions;
+                animation-duration: 600ms;
+                animation-timing-function: ease;
+                box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+
+
+                .options-container {
+                    z-index: 2;
+                    color: $grayish-blue;
+                    border-radius: $border-radius;
+                    background-color: $very-dark-grayish-blue;
+                    padding: 1em 2em;
+                    align-items: center;
+                    justify-content: center;
+                    display: flex;
+                    position: relative;
+
+                    p {
+                        font-size: $font-size-body;
+                        text-transform: uppercase;
+                        letter-spacing: .5em;
+                    }
+
+                    img {
+                        $icon-size: 1em;
+                        width: $icon-size;
+                        height: $icon-size;
+                        margin: 0 .5em;
+                    }
+                }
+
+                .triangle {
+                    z-index: 1;
+                    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+                    width: 2em;
+                    height: 2em;
+                    background-color: $very-dark-grayish-blue;
+                    top: 2em;
+                    position: absolute;
+                }
+            }
+
+            .share-options-hidden {
+                animation-name: animationOptions;
+                animation-duration: 500ms;
+                display: none;
+            }
+        }
+    }
+}
+
+@keyframes animationOptions {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.attribution {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin-bottom: 2rem;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media only screen and (max-width: 880px) {
+    .card {
+        margin: auto;
+        display: inline-flex;
+        flex-direction: column;
+        width: auto;
+        height: 100%;
+        background-color: white;
+        border-radius: $border-radius;
+
+        .card-imagen {
+            object-fit: cover;
+            object-position: 0 0;
+            width: 100%;
+            max-height: 15.5em;
+            border-radius: $border-radius $border-radius 0 0;
+        }
+
+        .card-copy {
+            padding: 2em 2.2em;
+            padding-bottom: 1.3em;
+            position: relative;
+    
+            .card-title {
+                font-size: $font-size-title;
+                line-height: 1.4em;
+                max-width: 16em;
+                padding-bottom: .5em;
+            }
+    
+            .card-desc {
+                font-size: $font-size-body;
+                line-height: 1.5em;
+                max-width: 25.5em;
+                padding-bottom: 2.5em;
+            }
+    
+            .avatar {
+                position: initial;
+
+                .button-share {
+                    z-index: 3;
+
+                    &:hover {
+                        background-color: $desaturated-dark-blue;
+                    }
+                }
+
+                .share-options {
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    height: 5em;
+
+                    .options-container {
+                        height: 100%;
+                        border-radius:0 0 $border-radius $border-radius;
+                        justify-content: flex-start;
+                        position: relative;
+    
+                        p {
+                            font-size: $font-size-body;
+                            text-transform: uppercase;
+                            letter-spacing: .5em;
+                            padding-right: .5em;
+                        }
+    
+                        img {
+                            $icon-size: 1.2em;
+    
+                            width: $icon-size;
+                            height: $icon-size;
+                            margin: 0 .5em;
+                        }
+                    }
+    
+                    .triangle {
+                        display: none;
+                    }
+                }
+    
+                .share-options-hidden {
+                    display: none;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,320 @@
+* {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  font-family: "Manrope", sans-serif;
+  color: #48556a;
+}
+
+.main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  background-color: #ecf2f8;
+}
+
+.card {
+  margin: auto;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  width: auto;
+  height: 100%;
+  background-color: white;
+  border-radius: 0.5rem;
+  -webkit-box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+          box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.card .card-imagen {
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 0;
+     object-position: 0;
+  width: 17.7em;
+  height: auto;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+
+.card .card-copy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2em 2.2em;
+}
+
+.card .card-copy .card-title {
+  color: #48556a;
+  font-size: 1.26em;
+  font-weight: bold;
+  line-height: 1.4em;
+  max-width: 18em;
+  padding-bottom: .5em;
+}
+
+.card .card-copy .card-desc {
+  color: #6d7f97;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.5em;
+  max-width: 28em;
+  padding-bottom: 1.5em;
+}
+
+.card .card-copy .avatar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  max-width: 30em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+.card .card-copy .avatar .avatar-imagen {
+  width: 2.5em;
+  height: auto;
+  border-radius: 50%;
+}
+
+.card .card-copy .avatar .avatar-content {
+  padding-left: 1em;
+  width: 100%;
+  height: auto;
+}
+
+.card .card-copy .avatar .avatar-content .name {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.card .card-copy .avatar .avatar-content .timestamp {
+  font-size: 13px;
+  color: #6d7f97;
+}
+
+.card .card-copy .avatar .button-share {
+  background-color: #ecf2f8;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 600ms;
+          transition-duration: 600ms;
+  padding: .5em;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.card .card-copy .avatar .button-share .icon {
+  width: 1em;
+  height: 1em;
+  padding: .6em;
+  background-color: #48556a;
+  -webkit-mask: url(../images/icon-share.svg) no-repeat;
+          mask: url(../images/icon-share.svg) no-repeat;
+}
+
+.card .card-copy .avatar .button-share:hover {
+  background-color: #48556a;
+}
+
+.card .card-copy .avatar .button-share:hover .icon {
+  background-color: #ecf2f8;
+}
+
+.card .card-copy .avatar .share-options {
+  position: absolute;
+  left: 14.55em;
+  bottom: 4em;
+  height: auto;
+  -webkit-animation-name: animationOptions;
+          animation-name: animationOptions;
+  -webkit-animation-duration: 600ms;
+          animation-duration: 600ms;
+  -webkit-animation-timing-function: ease;
+          animation-timing-function: ease;
+  -webkit-box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+          box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.card .card-copy .avatar .share-options .options-container {
+  z-index: 2;
+  color: #9eafc2;
+  border-radius: 0.5rem;
+  background-color: #48556a;
+  padding: 1em 2em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.card .card-copy .avatar .share-options .options-container p {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: .5em;
+}
+
+.card .card-copy .avatar .share-options .options-container img {
+  width: 1em;
+  height: 1em;
+  margin: 0 .5em;
+}
+
+.card .card-copy .avatar .share-options .triangle {
+  z-index: 1;
+  -webkit-clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+          clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+  width: 2em;
+  height: 2em;
+  background-color: #48556a;
+  top: 2em;
+  position: absolute;
+}
+
+.card .card-copy .avatar .share-options-hidden {
+  -webkit-animation-name: animationOptions;
+          animation-name: animationOptions;
+  -webkit-animation-duration: 500ms;
+          animation-duration: 500ms;
+  display: none;
+}
+
+@-webkit-keyframes animationOptions {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes animationOptions {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.attribution {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: 2rem;
+  font-size: 11px;
+  text-align: center;
+}
+
+.attribution a {
+  color: #3e52a3;
+}
+
+@media only screen and (max-width: 880px) {
+  .card {
+    margin: auto;
+    display: -webkit-inline-box;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: auto;
+    height: 100%;
+    background-color: white;
+    border-radius: 0.5rem;
+  }
+  .card .card-imagen {
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: 0 0;
+       object-position: 0 0;
+    width: 100%;
+    max-height: 15.5em;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+  .card .card-copy {
+    padding: 2em 2.2em;
+    padding-bottom: 1.3em;
+    position: relative;
+  }
+  .card .card-copy .card-title {
+    font-size: 1.26em;
+    line-height: 1.4em;
+    max-width: 16em;
+    padding-bottom: .5em;
+  }
+  .card .card-copy .card-desc {
+    font-size: 13px;
+    line-height: 1.5em;
+    max-width: 25.5em;
+    padding-bottom: 2.5em;
+  }
+  .card .card-copy .avatar {
+    position: initial;
+  }
+  .card .card-copy .avatar .button-share {
+    z-index: 3;
+  }
+  .card .card-copy .avatar .button-share:hover {
+    background-color: #6d7f97;
+  }
+  .card .card-copy .avatar .share-options {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 5em;
+  }
+  .card .card-copy .avatar .share-options .options-container {
+    height: 100%;
+    border-radius: 0 0 0.5rem 0.5rem;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    position: relative;
+  }
+  .card .card-copy .avatar .share-options .options-container p {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: .5em;
+    padding-right: .5em;
+  }
+  .card .card-copy .avatar .share-options .options-container img {
+    width: 1.2em;
+    height: 1.2em;
+    margin: 0 .5em;
+  }
+  .card .card-copy .avatar .share-options .triangle {
+    display: none;
+  }
+  .card .card-copy .avatar .share-options-hidden {
+    display: none;
+  }
+}
+/*# sourceMappingURL=main.css.map */
